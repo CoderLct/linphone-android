@@ -26,6 +26,20 @@ chat_messages_aggregation=1
 #remove this property for any application that is not Linphone public version itself
 ec_calibrator_cool_tones=1
 
+echo_canceller_filtername=MSWebRTCAEC
+software_aec_enabled=1
+noise_suppression_enabled=1
+echo_canceller_delay=150
+ec_delay=150
+ec_framesize=0
+automatic_gain_control_enabled=1
+webrtc_aec_enabled=1
+echo_suppressor_enabled=1
+echo_limiter_enabled=0
+
+[audio]
+android_audio_mode_in_call=3
+
 [video]
 displaytype=MSAndroidTextureDisplay
 auto_resize_preview_to_keep_ratio=1

@@ -391,6 +391,18 @@ class CoreContext(
 
         configureCore()
 
+        core.mediastreamerFactory.setDeviceInfo(
+            android.os.Build.MANUFACTURER,
+            android.os.Build.MODEL,
+            android.os.Build.DEVICE,
+            org.linphone.mediastream.Factory.DEVICE_HAS_BUILTIN_AEC_CRAPPY,
+            150,
+            0
+        )
+        core.isEchoCancellationEnabled = true
+        core.isGenericComfortNoiseEnabled = true
+        core.echoCancellerFilterName = "MSWebRTCAEC"
+
         core.start()
         _lifecycleRegistry.currentState = Lifecycle.State.STARTED
 

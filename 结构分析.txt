@@ -1,0 +1,15 @@
+
+一 页面组成：
+0、登录页面（AssistantActivity）
+1、主页面（MainActivity）
+    1.1 通话界面（CallActivity）
+    1.2 聊天界面（ChatBubbleActivity）
+2 侧滑菜单（SideMenuFragment）
+    2.0
+    2.1 助手（AssistantActivity）
+    2.2 设置（SettingFragment）
+    2.3 录音（RecordingFragment）
+    2.4 关于（AboutFragment）
+
+二 组件
+1、MainApp: LinphoneApplication
