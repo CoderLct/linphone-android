@@ -139,6 +139,7 @@ class GenericLoginViewModel(private val accountCreator: AccountCreator) : ViewMo
 
         val account = accountCreator.createAccountInCore()
         accountToCheck = account
+        android.util.Log.w("TEST", "账号：$accountCreator")
 
         if (account == null) {
             Log.e("[Assistant] [Generic Login] Account creator couldn't create account")

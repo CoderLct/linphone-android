@@ -1,9 +1,13 @@
 
 一 页面组成：
-0、登录页面（AssistantActivity）
+0、助手（首页）（AssistantActivity）
+    0.0 SIP账户登录页面（GenericAccountLoginFragment）
 1、主页面（MainActivity）
-    1.1 通话界面（CallActivity）
-    1.2 聊天界面（ChatBubbleActivity）
+    1.1 通话记录（MasterCallLogsFragment）
+    1.2 联系人（MasterContactsFragment）
+    1.3 拨号（DialerFragment） -> 通话（CallActivity）
+        显示视频控件（RoundCornersTextureView）
+    1.4 聊天界面（ChatBubbleActivity）
 2 侧滑菜单（SideMenuFragment）
     2.0
     2.1 助手（AssistantActivity）
@@ -13,3 +17,7 @@
 
 二 组件
 1、MainApp: LinphoneApplication
+
+三 类继承关系
+1、GenericActivity: 基类Activity
+2、GenericFragment: 基类Fragment

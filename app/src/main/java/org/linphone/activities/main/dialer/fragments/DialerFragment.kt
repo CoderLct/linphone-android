@@ -213,6 +213,7 @@ class DialerFragment : SecureFragment<DialerFragmentBinding>() {
 
     override fun onResume() {
         super.onResume()
+        Log.i("[TEST] onResume1: ${(requireActivity() as GenericActivity).isTablet()}")
 
         if ((requireActivity() as GenericActivity).isTablet()) {
             coreContext.core.nativePreviewWindowId = binding.videoPreviewWindow

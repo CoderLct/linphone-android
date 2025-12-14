@@ -220,6 +220,7 @@ class CallActivity : ProximitySensorActivity() {
 
     override fun onResume() {
         super.onResume()
+        Log.i("[TEST] CallActivity onResume")
 
         if (coreContext.core.callsNb == 0) {
             Log.w("[Call Activity] Resuming but no call found...")
@@ -261,6 +262,7 @@ class CallActivity : ProximitySensorActivity() {
     }
 
     override fun onDestroy() {
+        Log.e("[TEST] onDestroy: ${coreContext.core.globalState != GlobalState.Off}")
         if (coreContext.core.globalState != GlobalState.Off) {
             coreContext.core.nativeVideoWindowId = null
             coreContext.core.nativePreviewWindowId = null

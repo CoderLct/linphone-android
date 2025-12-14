@@ -28,6 +28,7 @@ import org.linphone.R
 import org.linphone.activities.navigateToActiveCall
 import org.linphone.activities.voip.viewmodels.CallsViewModel
 import org.linphone.activities.voip.viewmodels.ControlsViewModel
+import org.linphone.core.tools.Log
 import org.linphone.databinding.VoipCallOutgoingFragmentBinding
 
 class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmentBinding>() {
@@ -76,6 +77,7 @@ class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmen
             viewLifecycleOwner
         ) {
             if (it) {
+                Log.e("[TEST] isOutgoingEarlyMedia.observe")
                 setupLocalVideoPreview(binding.localPreviewVideoSurface, binding.switchCamera)
             }
         }
@@ -87,6 +89,7 @@ class OutgoingCallFragment : GenericVideoPreviewFragment<VoipCallOutgoingFragmen
 
         controlsViewModel.forceDisableProximitySensor.value = true
         if (controlsViewModel.isOutgoingEarlyMedia.value == true) {
+            Log.e("[TEST] isOutgoingEarlyMedia.onResume")
             setupLocalVideoPreview(binding.localPreviewVideoSurface, binding.switchCamera)
         }
     }

@@ -122,8 +122,10 @@ class ControlsViewModel : ViewModel() {
             state: Call.State,
             message: String
         ) {
-            Log.i("[Call Controls] State changed: $state")
-            isOutgoingEarlyMedia.value = state == Call.State.OutgoingEarlyMedia
+            Log.i(
+                "[Call Controls] State changed: $state, ${coreContext.core.currentCall?.params?.videoDirection}"
+            )
+//            isOutgoingEarlyMedia.value = state == Call.State.OutgoingEarlyMedia
             isIncomingEarlyMediaVideo.value = state == Call.State.IncomingEarlyMedia && call.remoteParams?.isVideoEnabled == true
             isIncomingCallVideo.value = call.remoteParams?.isVideoEnabled == true && coreContext.core.videoActivationPolicy.automaticallyAccept
             attendedTransfer.value = core.callsNb > 1

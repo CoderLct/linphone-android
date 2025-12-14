@@ -26,6 +26,7 @@ import android.widget.ImageView
 import androidx.databinding.ViewDataBinding
 import org.linphone.LinphoneApplication.Companion.coreContext
 import org.linphone.activities.GenericFragment
+import org.linphone.core.tools.Log
 
 abstract class GenericVideoPreviewFragment<T : ViewDataBinding> : GenericFragment<T>() {
     private var previewX: Float = 0f
@@ -67,6 +68,7 @@ abstract class GenericVideoPreviewFragment<T : ViewDataBinding> : GenericFragmen
     }
 
     protected fun setupLocalVideoPreview(localVideoPreview: TextureView, switchCamera: ImageView?) {
+        Log.e("[TEST] setupLocalVideoPreview")
         switchCameraImageView = switchCamera
         localVideoPreview.setOnTouchListener(previewTouchListener)
         coreContext.core.nativePreviewWindowId = localVideoPreview

@@ -179,6 +179,7 @@ class CoreContext(
             message: String
         ) {
             Log.i("[Context] Call state changed [$state]")
+            android.util.Log.i("TEST", "[Context] Call state changed [$state]")
             if (state == Call.State.IncomingReceived || state == Call.State.IncomingEarlyMedia) {
                 if (declineCallDueToGsmActiveCall()) {
                     call.decline(Reason.Busy)
@@ -949,7 +950,7 @@ class CoreContext(
         }
 
         val call = core.inviteAddressWithParams(address, params)
-        Log.i("[Context] Starting call $call")
+        Log.i("[Context] Starting call $call, ${params.videoDirection}")
     }
 
     fun switchCamera() {
