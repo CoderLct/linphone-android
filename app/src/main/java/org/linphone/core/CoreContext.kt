@@ -179,7 +179,6 @@ class CoreContext(
             message: String
         ) {
             Log.i("[Context] Call state changed [$state]")
-            android.util.Log.i("TEST", "[Context] Call state changed [$state]")
             if (state == Call.State.IncomingReceived || state == Call.State.IncomingEarlyMedia) {
                 if (declineCallDueToGsmActiveCall()) {
                     call.decline(Reason.Busy)
@@ -403,6 +402,7 @@ class CoreContext(
         core.isEchoCancellationEnabled = true
         core.isGenericComfortNoiseEnabled = true
         core.echoCancellerFilterName = "MSWebRTCAEC"
+        core.maxCalls = 1
 
         core.start()
         _lifecycleRegistry.currentState = Lifecycle.State.STARTED
